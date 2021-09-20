@@ -5,7 +5,7 @@ const routeItems = [
   ["v-8daa1a0e","/","",["/index.html","/README.md"]],
   ["v-4eaf9f84","/guide/page.html","asd",["/guide/page","/guide/page.md"]],
   ["v-fffb8e28","/guide/","",["/guide/index.html","/guide/README.md"]],
-  ["v-524c3442","/study/algorithm/file2.html","你好",["/study/algorithm/file2","/study/algorithm/file2.md"]],
+  ["v-4ee28304","/study/algorithm/file0.html","哎呀",["/study/algorithm/file0","/study/algorithm/file0.md"]],
   ["v-3958369f","/study/algorithm/","OJ刷题纪",["/study/algorithm/index.html","/study/algorithm/README.md"]],
   ["v-3706649a","/404.html","",["/404"]],
 ]

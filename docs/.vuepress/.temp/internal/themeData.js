@@ -10,7 +10,7 @@ export const themeData = {
         "sidebarDepth": 2,
         "children": [
           "README.md",
-          "file2.md"
+          "file0.md"
         ]
       }
     ],
@@ -27,10 +27,8 @@ export const themeData = {
       }
     ]
   },
-  "editLink": true,
-  "repo": "AndPuQing/KnowSpace",
+  "repo": "AndPuQing/WorkSpace",
   "editLinkText": "在Github上编辑此页",
-  "lastUpdated": true,
   "navbar": [
     {
       "text": "主页",
@@ -67,6 +65,8 @@ export const themeData = {
   "selectLanguageText": "Languages",
   "selectLanguageAriaLabel": "Select language",
   "sidebarDepth": 2,
+  "editLink": true,
+  "lastUpdated": true,
   "lastUpdatedText": "Last Updated",
   "contributors": true,
   "contributorsText": "Contributors",

@@ -1,6 +1,6 @@
-<template><blockquote>
+<template><div class="custom-container tip"><p class="custom-container-title">TIP</p>
 <p>记录写Oj过程中的小tips.</p>
-</blockquote>
+</div>
 <h3 id="一、输入" tabindex="-1"><a class="header-anchor" href="#一、输入" aria-hidden="true">#</a> 一、输入</h3>
 <p>部分题目会要求多行输入，那可以采用如下方法：</p>
 <p><strong>有多个case输入，一行一个结果</strong></p>
@@ -30,7 +30,7 @@
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>一般来说上面就够了，参考<a href="https://blog.csdn.net/fgszdgbzdb/article/details/84879365" target="_blank" rel="noopener noreferrer">C语言多行输入问题集锦<OutboundLink/></a>。</p>
-<h3 id="_2、多维动态数组" tabindex="-1"><a class="header-anchor" href="#_2、多维动态数组" aria-hidden="true">#</a> 2、多维动态数组</h3>
+<h3 id="二、多维动态数组" tabindex="-1"><a class="header-anchor" href="#二、多维动态数组" aria-hidden="true">#</a> 二、多维动态数组</h3>
 <p>很多情况需要我们使用多维动态数组，动态多维数组有很多种方式，这里讲三种。</p>
 <p><strong>方式一:利用二级指针申请一个二维数组</strong></p>
 <div class="language-c ext-c line-numbers-mode"><pre v-pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
@@ -80,10 +80,10 @@
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>这里要谈一下经典的指针数组与数组指针的区别：</p>
-<blockquote>
+<div class="custom-container tip"><p class="custom-container-title">注意！</p>
 <p><strong>指针数组</strong>：首先它是一个数组，数组的元素都是指针，数组占多少个字节由数组本身的大小决定，每一个元素都是一个指针，在32 位系统下任何类型的指针永远是占4 个字节。它是“储存指针的数组”的简称。</p>
 <p><strong>数组指针</strong>：首先它是一个指针，它指向一个数组。在32 位系统下任何类型的指针永远是占4 个字节，至于它指向的数组占多少字节，不知道，具体要看数组大小。它是“指向数组的指针”的简称。</p>
-</blockquote>
+</div>
 <p><strong>方法三：模拟二维数组</strong></p>
 <div class="language-c ext-c line-numbers-mode"><pre v-pre class="language-c"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>

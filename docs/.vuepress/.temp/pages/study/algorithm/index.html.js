@@ -16,13 +16,22 @@ export const data = {
     },
     {
       "level": 3,
-      "title": "2、多维动态数组",
-      "slug": "_2、多维动态数组",
+      "title": "二、多维动态数组",
+      "slug": "二、多维动态数组",
       "children": []
     }
   ],
   "filePathRelative": "study/algorithm/README.md",
-  "git": {}
+  "git": {
+    "updatedTime": 1632145970000,
+    "contributors": [
+      {
+        "name": "AndPuqing",
+        "email": "1569540783@qq.com",
+        "commits": 1
+      }
+    ]
+  }
 }
 
 if (import.meta.webpackHot) {

@@ -7,7 +7,7 @@ module.exports = {
       "sidebarDepth": 2,
       "children": [
         "README.md",
-        "file2.md"
+        "file0.md"
       ]
     }
   ],

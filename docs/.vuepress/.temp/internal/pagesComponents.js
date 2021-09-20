@@ -9,8 +9,8 @@ export const pagesComponents = {
   "v-4eaf9f84": defineAsyncComponent(() => import(/* webpackChunkName: "v-4eaf9f84" */"D:/Files/Blog/vuePressWareHouse/docs/.vuepress/.temp/pages/guide/page.html.vue")),
   // path: /guide/
   "v-fffb8e28": defineAsyncComponent(() => import(/* webpackChunkName: "v-fffb8e28" */"D:/Files/Blog/vuePressWareHouse/docs/.vuepress/.temp/pages/guide/index.html.vue")),
-  // path: /study/algorithm/file2.html
-  "v-524c3442": defineAsyncComponent(() => import(/* webpackChunkName: "v-524c3442" */"D:/Files/Blog/vuePressWareHouse/docs/.vuepress/.temp/pages/study/algorithm/file2.html.vue")),
+  // path: /study/algorithm/file0.html
+  "v-4ee28304": defineAsyncComponent(() => import(/* webpackChunkName: "v-4ee28304" */"D:/Files/Blog/vuePressWareHouse/docs/.vuepress/.temp/pages/study/algorithm/file0.html.vue")),
   // path: /study/algorithm/
   "v-3958369f": defineAsyncComponent(() => import(/* webpackChunkName: "v-3958369f" */"D:/Files/Blog/vuePressWareHouse/docs/.vuepress/.temp/pages/study/algorithm/index.html.vue")),
   // path: /404.html

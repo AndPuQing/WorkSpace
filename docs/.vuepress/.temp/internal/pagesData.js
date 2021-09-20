@@ -7,8 +7,8 @@ export const pagesData = {
   "v-4eaf9f84": () => import(/* webpackChunkName: "v-4eaf9f84" */"D:/Files/Blog/vuePressWareHouse/docs/.vuepress/.temp/pages/guide/page.html.js").then(({ data }) => data),
   // path: /guide/
   "v-fffb8e28": () => import(/* webpackChunkName: "v-fffb8e28" */"D:/Files/Blog/vuePressWareHouse/docs/.vuepress/.temp/pages/guide/index.html.js").then(({ data }) => data),
-  // path: /study/algorithm/file2.html
-  "v-524c3442": () => import(/* webpackChunkName: "v-524c3442" */"D:/Files/Blog/vuePressWareHouse/docs/.vuepress/.temp/pages/study/algorithm/file2.html.js").then(({ data }) => data),
+  // path: /study/algorithm/file0.html
+  "v-4ee28304": () => import(/* webpackChunkName: "v-4ee28304" */"D:/Files/Blog/vuePressWareHouse/docs/.vuepress/.temp/pages/study/algorithm/file0.html.js").then(({ data }) => data),
   // path: /study/algorithm/
   "v-3958369f": () => import(/* webpackChunkName: "v-3958369f" */"D:/Files/Blog/vuePressWareHouse/docs/.vuepress/.temp/pages/study/algorithm/index.html.js").then(({ data }) => data),
   // path: /404.html
