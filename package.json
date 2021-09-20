@@ -1,0 +1,17 @@
+{
+  "name": "vuePressWareHouse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.26",
+    "vuepress-plugin-auto-sidebar": "^2.4.0-alpha.2"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "esbuild": "^0.12.28"
+  }
+}
