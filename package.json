@@ -16,5 +16,6 @@
   "dependencies": {
     "@vue/component-compiler-utils": "^3.2.2",
     "esbuild": "^0.12.28"
-  }
+  },
+  "author": "AndPuqing <1569540783@qq.com>"
 }

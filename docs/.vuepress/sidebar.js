@@ -18,8 +18,7 @@ module.exports = {
       "collapsable": false,
       "sidebarDepth": 2,
       "children": [
-        "README.md",
-        "page.md"
+        "README.md"
       ]
     }
   ]
