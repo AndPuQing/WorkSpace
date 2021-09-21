@@ -1,3 +1,53 @@
-:root{
-    --content-width: 70%;
+:root {
+  --content-width: 70%;
+}
+
+img[src*="#w100"] {
+  width: 100%;
+}
+img[src*="#w90"] {
+  width: 90%;
+}
+
+img[src*="#w80"] {
+  width: 80%;
+}
+
+img[src*="#w70"] {
+  width: 70%;
+}
+img[src*="#w60"] {
+  width: 60%;
+}
+
+img[src*="#w50"] {
+  width: 50%;
+}
+
+img[src*="#w30"] {
+  width: 30%;
+}
+
+img[src*="#w20"] {
+  width: 20%;
+}
+
+img[src*="#w10"] {
+  width: 10%;
+}
+
+img[src*="#w5"] {
+  width: 5%;
+}
+
+img[src*="#w2"] {
+  width: 2%;
+}
+
+img[src*="#w1"] {
+  width: 1%;
+}
+
+img[src*="#w0.1"] {
+  width: 0.1%;
 }

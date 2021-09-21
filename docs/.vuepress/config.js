@@ -9,11 +9,11 @@ module.exports = {
       "vuepress-plugin-auto-sidebar",
       {
         sort: {
-          mode: "created_time_asc",
+          mode: "created_time_desc",
           readmeFirst: true,
           readmeFirstForce: false,
         },
-        sidebarDepth: 2,
+        sidebarDepth: 10,
       },
     ],
     // 更新刷新插件
@@ -27,15 +27,6 @@ module.exports = {
         },
       },
     ],
-    [
-      "vuepress-plugin-nuggets-style-copy",
-      {
-        copyText: "复制代码",
-        tip: {
-          content: "复制成功!",
-        },
-      },
-    ],
   ],
   themeConfig: {
     logo: "https://vuejs.org/images/logo.png",
@@ -46,8 +37,7 @@ module.exports = {
     navbar: [
       // NavbarItem
       { text: "主页", link: "/" },
-      { text: "指南", link: "/guide/" },
-      { text: "生活", link: "/life" },
+      { text: "日常", link: "/everday/" },
       { text: "魔法日常", link: "/dl/" },
       {
         text: "学习",
