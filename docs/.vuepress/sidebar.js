@@ -21,7 +21,8 @@ module.exports = {
       "children": [
         "README.md",
         "day0.md",
-        "day1.md"
+        "day1.md",
+        "day2.md"
       ]
     }
   ],
