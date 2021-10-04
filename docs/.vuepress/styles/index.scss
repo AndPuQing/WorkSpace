@@ -2,6 +2,11 @@
   --content-width: 70%;
 }
 
+.navbar::after {
+  z-index: -1;
+  opacity: 0.8;
+}
+
 img[src*="#w100"] {
   width: 100%;
 }

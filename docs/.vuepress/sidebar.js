@@ -8,7 +8,8 @@ module.exports = {
       "children": [
         "README.md",
         "algo0.md",
-        "algo1.md"
+        "algo1.md",
+        "algo2.md"
       ]
     }
   ],
@@ -22,7 +23,9 @@ module.exports = {
         "README.md",
         "day0.md",
         "day1.md",
-        "day2.md"
+        "day2.md",
+        "day3.md",
+        "day4.md"
       ]
     }
   ],
