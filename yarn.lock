@@ -1018,7 +1018,7 @@ array-flatten@1.1.1:
   resolved "https://registry.nlark.com/array-flatten/download/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
   integrity sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
 
-array-flatten@^2.1.0:
+array-flatten@^2.1.0, array-flatten@^2.1.2:
   version "2.1.2"
   resolved "https://registry.nlark.com/array-flatten/download/array-flatten-2.1.2.tgz#24ef80a28c1a893617e2149b0c6d0d788293b099"
   integrity sha1-JO+AoowaiTYX4hSbDG0NeIKTsJk=
@@ -1660,6 +1660,13 @@ decode-uri-component@^0.2.0:
   resolved "https://registry.nlark.com/decode-uri-component/download/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
   integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
 
+deconstruct-merge@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.nlark.com/deconstruct-merge/download/deconstruct-merge-1.1.0.tgz#ed9986ce729d9e67bdbc5780a771a021947ab3d3"
+  integrity sha1-7ZmGznKdnme9vFeAp3GgIZR6s9M=
+  dependencies:
+    array-flatten "^2.1.2"
+
 deep-equal@^1.0.1:
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/deep-equal/download/deep-equal-1.1.1.tgz?cache=0&sync_timestamp=1606859714626&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdeep-equal%2Fdownload%2Fdeep-equal-1.1.1.tgz#b5c98c942ceffaf7cb051e24e1434a25a2e6076a"
@@ -1928,6 +1935,11 @@ eslint-scope@5.1.1:
   dependencies:
     esrecurse "^4.3.0"
     estraverse "^4.1.1"
+
+esm@^3.0.34:
+  version "3.2.25"
+  resolved "https://registry.npm.taobao.org/esm/download/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"
+  integrity sha1-NCwYwp1WFXaIulzjH4Qx+7eVzBA=
 
 esprima@^4.0.0:
   version "4.0.1"
@@ -3120,6 +3132,13 @@ markdown-it@^12.2.0:
     linkify-it "^3.0.1"
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
+
+mathjax3@3.0.0-beta.3:
+  version "3.0.0-beta.3"
+  resolved "https://registry.nlark.com/mathjax3/download/mathjax3-3.0.0-beta.3.tgz#c3072a59304b4b612aa9516eb672b07000c9a3d5"
+  integrity sha1-wwcqWTBLS2EqqVFutnKwcADJo9U=
+  dependencies:
+    esm "^3.0.34"
 
 mdn-data@2.0.14:
   version "2.0.14"
@@ -4606,6 +4625,13 @@ vue@^3.2.3:
     "@vue/runtime-dom" "3.2.12"
     "@vue/shared" "3.2.12"
 
+vuepress-mergeable@^1.0.2:
+  version "1.1.4"
+  resolved "https://registry.npmmirror.com/vuepress-mergeable/download/vuepress-mergeable-1.1.4.tgz#738bbe46101a07e256b83dbf82140d17be020c05"
+  integrity sha1-c4u+RhAaB+JWuD2/ghQNF74CDAU=
+  dependencies:
+    deconstruct-merge "^1.1.0"
+
 vuepress-plugin-auto-sidebar@^2.4.0-alpha.2:
   version "2.4.0-alpha.2"
   resolved "https://registry.nlark.com/vuepress-plugin-auto-sidebar/download/vuepress-plugin-auto-sidebar-2.4.0-alpha.2.tgz#3ab239d3b28d4f1d99aab1e6e01aff27ea42947d"
@@ -4619,6 +4645,15 @@ vuepress-plugin-code-copy@^1.0.6:
   version "1.0.6"
   resolved "https://registry.nlark.com/vuepress-plugin-code-copy/download/vuepress-plugin-code-copy-1.0.6.tgz#6431dab764b48b5b203e4936d98b1943651ce4ad"
   integrity sha1-ZDHat2S0i1sgPkk22YsZQ2Uc5K0=
+
+vuepress-plugin-mathjax@^1.2.8:
+  version "1.2.8"
+  resolved "https://registry.nlark.com/vuepress-plugin-mathjax/download/vuepress-plugin-mathjax-1.2.8.tgz#decec38e9dbb82de9cf79f042463fa4a56e25340"
+  integrity sha1-3s7Djp27gt6c958EJGP6SlbiU0A=
+  dependencies:
+    lru-cache "^5.1.1"
+    mathjax3 "3.0.0-beta.3"
+    vuepress-mergeable "^1.0.2"
 
 vuepress@^2.0.0-beta.26:
   version "2.0.0-beta.26"

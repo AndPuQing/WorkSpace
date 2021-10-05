@@ -16,6 +16,16 @@ module.exports = {
         sidebarDepth: 10,
       },
     ],
+    //数学支持
+    [
+      "vuepress-plugin-mathjax",
+      {
+        target: "svg",
+        macros: {
+          "*": "\\times",
+        },
+      },
+    ],
     // 更新刷新插件
     [
       "@vuepress/pwa",
