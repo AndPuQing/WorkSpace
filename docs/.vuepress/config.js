@@ -1,6 +1,7 @@
 module.exports = {
-  title: "Hello VuePress",
+  title: "WorkSpace",
   description: "Just playing around",
+  head: [["link", { rel: "icon", href: "/img/logo.png" }]],
   dest: "./dist",
   base: "/",
   plugins: [
@@ -17,13 +18,18 @@ module.exports = {
     ["vuepress-plugin-smooth-scroll"],
   ],
   themeConfig: {
+    logo: "/img/logo.png",
     nav: [
       {
         text: "日常",
         link: "/everyday/",
       },
       {
-        text: "学习",
+        text: "魔法",
+        link: "/magic/",
+      },
+      {
+        text: "不学习",
         items: [
           {
             text: "数据结构与算法",
