@@ -1,23 +1,20 @@
 {
-  "name": "vuePressWareHouse",
+  "name": "vuepresswarehouse",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "@mr-hope/vuepress-plugin-copy-code": "^1.20.3",
-    "@vuepress/plugin-pwa": "^1.8.2",
-    "vuepress": "^2.0.0-beta.26",
-    "vuepress-plugin-auto-sidebar": "^2.4.0-alpha.2"
-  },
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "docs:nav": "vuepress nav docs"
   },
-  "dependencies": {
-    "@vue/component-compiler-utils": "^3.2.2",
-    "esbuild": "^0.12.28",
-    "vuepress-plugin-code-copy": "^1.0.6",
-    "vuepress-plugin-mathjax": "^1.2.8"
-  },
-  "author": "AndPuqing <1569540783@qq.com>"
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-auto-sidebar": "^2.3.2",
+    "vuepress-plugin-mathjax": "^1.2.8",
+    "vuepress-plugin-medium-zoom": "^1.1.9",
+    "vuepress-plugin-smooth-scroll": "0.0.10"
+  }
 }
