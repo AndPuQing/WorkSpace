@@ -1,5 +1,5 @@
 ---
-title: 记录PuQing憨批日常
+title: 记录PuQing憨憨日常
 ---
 
-:angry:
+<font size=8>:angry:</font>

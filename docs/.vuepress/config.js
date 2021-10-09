@@ -2,7 +2,7 @@ module.exports = {
   title: "WorkSpace",
   description: "Just playing around",
   head: [["link", { rel: "icon", href: "/img/logo.png" }]],
-  dest: "./dist",
+  dest: "public",
   base: "/",
   plugins: [
     ["vuepress-plugin-auto-sidebar", {}],
@@ -17,6 +17,9 @@ module.exports = {
     ],
     ["vuepress-plugin-smooth-scroll"],
   ],
+  markdowm: {
+    lineNumbers: true,
+  },
   themeConfig: {
     logo: "/img/logo.png",
     nav: [
