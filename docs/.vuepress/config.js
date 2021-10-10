@@ -5,7 +5,12 @@ module.exports = {
   dest: "public",
   base: "/",
   plugins: [
-    ["vuepress-plugin-auto-sidebar", {}],
+    [
+      "vuepress-plugin-auto-sidebar",
+      {
+        sidebarDepth: 2,
+      },
+    ],
     [
       "vuepress-plugin-mathjax",
       {
@@ -21,8 +26,8 @@ module.exports = {
     lineNumbers: true,
   },
   themeConfig: {
-    lastUpdated: 'Last Updated',
-    repo: 'https://github.com/AndPuQing/WorkSpace',
+    lastUpdated: "Last Updated",
+    repo: "https://github.com/AndPuQing/WorkSpace",
     logo: "/img/logo.png",
     nav: [
       {
