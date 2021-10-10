@@ -21,6 +21,8 @@ module.exports = {
     lineNumbers: true,
   },
   themeConfig: {
+    lastUpdated: 'Last Updated',
+    repo: 'https://github.com/AndPuQing/WorkSpace',
     logo: "/img/logo.png",
     nav: [
       {
