@@ -7,16 +7,6 @@ module.exports = {
   plugins: [
     ["vuepress-plugin-auto-sidebar", {}],
     [
-      "posts-encrypt",
-      {
-        animate: true,
-        route: "/auth",
-        passwd: "123456",
-        encryptInDev: true,
-        expires: 0,
-      },
-    ],
-    [
       "vuepress-plugin-mathjax",
       {
         target: "svg",
