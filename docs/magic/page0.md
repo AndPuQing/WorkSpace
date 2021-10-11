@@ -9,7 +9,7 @@ Instance Segmentation"
 
 ## 摘要
 
-$Binary\ grid\ mask$ 广泛用于实例分割。就例如 $Mask\ R-CNN$[<sup>1</sup>](#references)，如下图所示，网络在 $28*28$ 的网格中预测 $Mask$ 。
+$Binary\; grid\; mask$ 广泛用于实例分割。就例如 $Mask\ R-CNN$[<sup>1</sup>](#references)，如下图所示，网络在 $28\times 28$ 的网格中预测 $Mask$ 。
 
 <div align=center>
 
@@ -17,13 +17,13 @@ $Binary\ grid\ mask$ 广泛用于实例分割。就例如 $Mask\ R-CNN$[<sup>1</
 
 </div>
 
-但是一般来说，低分辨率的网格不足以捕捉细节，而高分辨率会大大增加训练的复杂性，为解决此问题，这篇论文提出一种新的 $Mask$ 表达方式，利用离散余弦变换（$DCT$）将高分辨率的 $Binary\ grid\ mask$ 编码成一个紧凑的向量，这种方法称为 $DCT-Mask$。
+但是一般来说，低分辨率的网格不足以捕捉细节，而高分辨率会大大增加训练的复杂性，为解决此问题，这篇论文提出一种新的 $Mask$ 表达方式，利用离散余弦变换（$DCT$）将高分辨率的$Binary\; grid\; mask$编码成一个紧凑的向量，这种方法称为 $DCT-Mask$。
 
 该方法可以非常容易集成到大多数基于像素的实例分割上。它不需要任何预处理或预训练，而且几乎对速度没有损害。
 
 ## 介绍
 
-就如上图所示，$Mask\ R-CNN$ 将 $GT$ 采样到 $28*28$ ，然后上采样重构它，如下图所示，低分辨率的 $Binary\ grid\ mask$ 不足以捕获细节特征，并在上采样过程中产生偏差。
+就如上图所示，$Mask\ R-CNN$ 将 $GT$ 采样到 $28\times 28$ ，然后上采样重构它，如下图所示，低分辨率的 $Binary\; grid\; mask$ 不足以捕获细节特征，并在上采样过程中产生偏差。
 
 <div align=center>
 
@@ -33,7 +33,7 @@ $Binary\ grid\ mask$ 广泛用于实例分割。就例如 $Mask\ R-CNN$[<sup>1</
 
 如上图为使用 $DCT$ 和未使用 $DCT$ 方法的比较，左边为 $GT$ ；之后是 $Resize$ 后的 $GT$ ；再是基于 $Resize$ 后的重建图；最后是重建图与原来的$GT$图的误差值。
 
-所以就算预测 $Mask$ 是正确的，重建的 $Mask$ 也有一定的系统误差。解决方式之一是提高 $Binary\ grid\ mask$ 的分辨率，但是实验显示提高分辨率后平均精度（$AP$）比 $28*28$ 要差，具体见下图。
+所以就算预测 $Mask$ 是正确的，重建的 $Mask$ 也有一定的系统误差。解决方式之一是提高 $Binary\; grid\; mask$ 的分辨率，但是实验显示提高分辨率后平均精度（$AP$）比 $28\times 28$ 要差，具体见下图。
 
 <div align=center>
 
@@ -51,17 +51,17 @@ $Binary\ grid\ mask$ 广泛用于实例分割。就例如 $Mask\ R-CNN$[<sup>1</
 
 </div>
 
-该处理方式是受 $JPEG$ 标准的启发，$pipline$ 将二进制掩码转化为紧凑的向量。首先将 $GT\ Resize$到 $K*K$ 大小，然后对其进行二维 $DCT-II$ (假装是罗马 2)变换，在重构时利用二维逆 $DCT$ 变换，最后利用双线性插值 $Resize$ 到 $H*W$。数学表达如下（先看[<sup>F1</sup>](#离散余弦变换dct)）：
+该处理方式是受 $JPEG$ 标准的启发，$pipline$ 将二进制掩码转化为紧凑的向量。首先将 $GT\ Resize$到 $K\times K$ 大小，然后对其进行二维 $DCT-II$ (假装是罗马 2)变换，在重构时利用二维逆 $DCT$ 变换，最后利用双线性插值 $Resize$ 到 $H\times W$。数学表达如下（先看[<sup>F1</sup>](#离散余弦变换dct)）：
 
-设 $Binary\ grid\ mask\ M_{gt}\in\ R^{H*W}$。$Resize$ 到$M_{K*K}\in\ R^{K*K}$。文中$K=128$。二维$DCT$变换$M_{DCT}\in\ R^{K*K}$ 频率信号由如下公式得到：
+设 $Binary\; grid\; mask\; M_{gt}\in\ R^{H\times W}$。$Resize$ 到$M_{K\times K}\in\ R^{K\times K}$。文中$K=128$。二维$DCT$变换$M_{DCT}\in\ R^{K\times K}$ 频率信号由如下公式得到：
 
 $$M_{DCT}(u, v)=\frac{2}{K}C(u)C(v)\sum_{x=0}^{K-1} \sum_{y=0}^{K-1} M_{K \times K}(x, y) \cos \frac{(2 x+1) u \pi}{2 K} \cos \frac{(2 y+1) v \pi}{2 K}$$
 
 这里 $C(\omega)=1/\sqrt{2}$ 当 $\omega=0$ 时当 $\omega$ 等于其他值时 $C(\omega)=1$
 
-因为 $DCT$ 具有很强的能量聚集性，所以可以从 $M_{DCT}$ 经过 $zig-zag$ 编码后得到向量选择第一个 $N$ 维度的向量 $V\in\ R^{N}$ (为什么是$select\ the\ first\ N-dimensional\ vector?$)
+因为 $DCT$ 具有很强的能量聚集性，所以可以从 $M_{DCT}$ 经过 $zig-zag$ 编码后得到向量选择第一个 $N$ 维度的向量 $V\in\ R^{N}$ (为什么是$select\; the\; first\; N-dimensional\; vector?$)
 
-之后对该向量补零重构得到 $\bar{M}_{DCT}\in\ R^{K*K}$，下一步利用二维逆 $DCT$ 变换
+之后对该向量补零重构得到 $\bar{M}_{DCT}\in\ R^{K\times K}$，下一步利用二维逆 $DCT$ 变换
 
 $$\bar{M}_{K \times K}(x, y)=\frac{2}{K} \sum_{u=0}^{K-1} \sum_{v=0}^{K-1} C(u) C(v) \bar{M}_{D C T}(u, v) \cos \frac{(2 x+1) u \pi}{2 K} \cos \frac{(2 y+1) v \pi}{2 K}$$
 
@@ -73,7 +73,7 @@ $$\bar{M}_{K \times K}(x, y)=\frac{2}{K} \sum_{u=0}^{K-1} \sum_{v=0}^{K-1} C(u) 
 
 </div>
 
-如上图 $DCT-Mask$ 在$Mask\ R-CNN$ 的应用，在$Mask\ head$ 中使用 4 个卷积层，提取$Mask$ 特征，然后用三个线性归回层回归$DCT$向量
+如上图 $DCT-Mask$ 在$Mask\ R-CNN$ 的应用，在$Mask\; head$ 中使用 4 个卷积层，提取$Mask$ 特征，然后用三个线性归回层回归$DCT$向量
 
 则实际上变为回归问题，损失函数可构建为
 
@@ -111,7 +111,7 @@ $$\mathcal{L}_{mask}=1^{obj}\sum_{i}^{N}D(\hat{V}_{i},V_{i})$$
 
 ## 离散余弦变换(DCT)
 
-$DCT$ 变换的全称是离散余弦变换（$Discrete Cosine Transform$），主要用于将数据或图像的压缩，能够将空域的信号转换到频域上，具有良好的去相关性的性能。
+$DCT$ 变换的全称是离散余弦变换（$Discrete\; Cosine\; Transform$），主要用于将数据或图像的压缩，能够将空域的信号转换到频域上，具有良好的去相关性的性能。
 
 在详细说明 $DCT$ 公式之前需要对 $DFT$ 有所了解。
 
@@ -188,15 +188,15 @@ $$X[k]=\sum_{m=-N+\frac{1}{2}}^{N-\frac{1}{2}} x^{\prime}\left[m-\frac{1}{2}\rig
 
 但是这样是不科学的，因为$m$是带小数甚至负数的，因为在离散信号中找不到这样的信号。因此我们需要变形，我们知道这个序列是偶对称序列，因此
 
-$$\sum_{m=-N+\frac{1}{2}}^{N-\frac{1}{2}} x^{\prime}\left[m-\frac{1}{2}\right] \cos \left(\frac{2 \pi m k}{2 N}\right)=2 * \sum_{m=\frac{1}{2}}^{N-\frac{1}{2}} x^{\prime}\left[m-\frac{1}{2}\right] \cos \left(\frac{2 \pi m k}{2 N}\right)$$
+$$\sum_{m=-N+\frac{1}{2}}^{N-\frac{1}{2}} x^{\prime}\left[m-\frac{1}{2}\right] \cos \left(\frac{2 \pi m k}{2 N}\right)=2 \times  \sum_{m=\frac{1}{2}}^{N-\frac{1}{2}} x^{\prime}\left[m-\frac{1}{2}\right] \cos \left(\frac{2 \pi m k}{2 N}\right)$$
 
 于是设$\displaystyle n=m-\frac{1}{2}$，代入上式
 
-$$2 * \sum_{n=0}^{N-1} x^{\prime}[n] \cos \left(\frac{2 \pi\left(n+\frac{1}{2}\right) k}{2 N}\right)=2 * \sum_{n=0}^{N-1} x^{\prime}[n] \cos \left(\frac{\left(n+\frac{1}{2}\right) \pi k}{N}\right)$$
+$$2 \times  \sum_{n=0}^{N-1} x^{\prime}[n] \cos \left(\frac{2 \pi\left(n+\frac{1}{2}\right) k}{2 N}\right)=2 \times  \sum_{n=0}^{N-1} x^{\prime}[n] \cos \left(\frac{\left(n+\frac{1}{2}\right) \pi k}{N}\right)$$
 
 关于 $DCT$ 中 $c(u)$ 是怎么来的，$c(u)$ 在函数计算中，加不加都无所谓，但实际上，这个值因为一些工程上的意义，在 $DFT$ 中也常常出现$\frac{1}{N}$ 这主要是为了在 $DFT$ 变换变成矩阵运算的形式时，将该矩阵正交化，所以这里的$c(u)$也同样。$c(u)=\displaystyle \sqrt{\frac{1}{2N}}$ 将该系数乘入上面式子
 
-$$\sqrt{\frac{1}{2 N}} * 2 * \sum_{n=0}^{N-1} x^{\prime}[n] \cos \left(\frac{\left(n+\frac{1}{2}\right) \pi k}{N}\right)=\sqrt{\frac{2}{N}} * \sum_{n=0}^{N-1} x^{\prime}[n] \cos \left(\frac{\left(n+\frac{1}{2}\right) \pi k}{N}\right)$$
+$$\sqrt{\frac{1}{2 N}} \times  2 \times  \sum_{n=0}^{N-1} x^{\prime}[n] \cos \left(\frac{\left(n+\frac{1}{2}\right) \pi k}{N}\right)=\sqrt{\frac{2}{N}} \times  \sum_{n=0}^{N-1} x^{\prime}[n] \cos \left(\frac{\left(n+\frac{1}{2}\right) \pi k}{N}\right)$$
 
 于是我们便得到 $DCT$ 式子
 
