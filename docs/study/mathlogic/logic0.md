@@ -190,7 +190,7 @@ $$
 
 单独看一下这个电阻吧，当电阻左边是低电平时，接地，为使能；当高电平时，线路连通，又因是同一根导线，电位相同，所以是高电平。
 
-## 4.13题
+## 4.13 题
 
 <div align=center>
 
@@ -212,3 +212,103 @@ Y_{3} & = A'B\\
 $$
 
 然后狂连线就可。
+
+但是在实际使用$EDA$进行模拟时发现并不是简单连线就可，因为译码器输出是$m_{1}',\cdots,m_{7}'$，即当输入对应的数字时，输出的端口是低电平，其他的为高电平。而我们需要的是高电平，所以上面公式需要取反。
+
+$$
+\begin{aligned}
+Y_{1} & = m_{1}'+m_{2}'+m_{8}'+m_{4}'\\
+& = (m_{1}m_{2}m_{4}m_{8})'\\
+Y_{2} & = m_{7}+m_{11}+m_{13}+m_{14}\\
+& = (m_{7}m_{11}m_{13}m_{14})'\\
+Y_{3} & = m_{4}+m_{5}+\cdots+m_{7}\\
+& = (m_{4}m_{5}\cdots m_{7})'
+\end{aligned}
+$$
+
+就变成与非门了。
+
+<div align=center>
+
+![Internet Error](./logic0/4.13pcb.jpg)
+
+</div>
+
+如上图就是正常工作了。
+
+## 4.16 题
+
+<div align=center>
+
+![Internet Error](./logic0/4.16ti.jpg)
+
+![Internet Error](./logic0/4.16tu.jpg)
+
+</div>
+
+这也可太行了，图$4.5.5$都飞了，也太复杂了。
+
+### 先从数据选择器说起
+
+<div align=center>
+
+![Internet Error](./logic0/select.jpg#w70)
+
+</div>
+
+上图为数据选择器，其中$A_{1}A_{0}$为数据选择端，上图所示的$A_{1}A_{0}=11$为选择$D_{3}$进行输出。
+
+<div align=center>
+
+![Internet Error](./logic0/select2.jpg#w80)
+
+</div>
+
+上图为数据选择器的真值表。
+
+那聪明的你肯定想到了如何用四选一组成八选一？？
+
+<div align=center>
+
+![Internet Error](https://pic1.zhimg.com/v2-7fb29811cbd6942c0defd3936b013afc_r.jpg#w70)
+
+</div>
+
+第一个思路就是增加一个使能端，进行片选，当高位$A_{2}$为 0 时，芯片$(2)$失能，芯片$(1)$使能，从而增加可选择的端口。
+
+讲到这就可以重新认识一下$74HC151$芯片了，$S'$为使能端，低电平有效；$ABC$为地址选择端，高电平有效；$D_{0}D_{1}\cdots D_{7}$数据输入端，$Y$端输出端，$W=Y'$。
+
+根据数据选择器的$Y$输出公式我们可以写出：
+
+$$
+\begin{aligned}
+Z=Y=D\times m_{0}+D\times m_{1}+1\times m_{2}+0\times D_{3}\\
++D\times D_{4}+D\times D_{5}+D'\times D_{6}+0\times D_{7}
+\end{aligned}
+$$
+
+如何化简呢，头疼---矣，卡诺图。
+
+<div align=center>
+
+![Internet Error](./logic0/4.16ka.png#w60)
+
+</div>
+
+那我们似乎可以使用卡诺图的思想进行逻辑化简
+
+$$
+Z=Y=D\times B'+A'BC'+D'\times ABC'
+$$
+
+emmm,maybe 这就是最简了吧。
+
+## 4.19 题
+
+<div align=center>
+
+![Internet Error](./logic0/4.19ti.jpg)
+
+</div>
+
+
