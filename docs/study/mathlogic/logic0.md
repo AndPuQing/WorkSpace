@@ -445,3 +445,44 @@ $$
 
 嗯，突然合理很多。
 
+## 4.28 题
+
+<div align=center>
+
+![Internet Error](./logic0/4.28ti.jpg)
+
+</div>
+
+老规矩：比较器是个啥
+
+<div align=center>
+
+![Internet Error](./logic0/than.jpg#w40)
+
+</div>
+
+如图是一个一位的比较器，若$A>B$则上面输出$1$，若$A=B$则中间输出$0$，若$A<B$则下面输出$1$。
+
+<div align=center>
+
+![Internet Error](http://file.elecfans.com/web1/M00/51/92/o4YBAFsNCX6AQTP7AABaohq8qfw847.jpg#w60)
+
+</div>
+
+级联输入是来自低位的比较结果，用于多片相连的情况。
+
+<div align=center>
+
+![Internet Error](http://file.elecfans.com/web1/M00/51/AA/pIYBAFsNCYGAVPJGAAAdbjwc9EI497.jpg#w30)
+
+</div>
+
+上面是它的接线图
+
+<div align=center>
+
+![Internet Error](./logic0/4.28pcb.jpg)
+
+</div>
+
+$finish$
