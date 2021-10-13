@@ -252,7 +252,7 @@ $$
 
 <div align=center>
 
-![Internet Error](./logic0/select.jpg#w70)
+![Internet Error](./logic0/select.jpg#w60)
 
 </div>
 
@@ -260,7 +260,7 @@ $$
 
 <div align=center>
 
-![Internet Error](./logic0/select2.jpg#w80)
+![Internet Error](./logic0/select2.jpg#w60)
 
 </div>
 
@@ -270,7 +270,7 @@ $$
 
 <div align=center>
 
-![Internet Error](https://pic1.zhimg.com/v2-7fb29811cbd6942c0defd3936b013afc_r.jpg#w70)
+![Internet Error](https://pic1.zhimg.com/v2-7fb29811cbd6942c0defd3936b013afc_r.jpg#w60)
 
 </div>
 
@@ -311,4 +311,127 @@ emmm,maybe 这就是最简了吧。
 
 </div>
 
+还是利用 8 选 1$74HC151$，根据前面的思路，我们可以写得如下公式
+
+$$
+\begin{aligned}
+Y=1\times m_{9}+1\times m_{13}+1\times m_{3}+1\times m_{6}+1\times m_{7}
+\\+1\times m_{14}+1\times m_{15}+1\times m_{4}+1\times m_{12}
+\end{aligned}
+$$
+
+其他的为零乘，我们归纳成$\cdots$
+
+::: tip
+不对啊，$74HC151$不是三线寻址吗，不会吧不会吧，不会是两个$74HC151$吧
+:::
+
+emmm,似乎可以$embedding$，上面式子保留为
+
+$$
+\begin{aligned}
+Y=D\times m_{4}+D\times m_{6}+D\times m_{1}+1\times m_{3}
+\\+1\times m_{7}+D'\times m_{2}+D'\times m_{6}
+\end{aligned}
+$$
+
+其余为零，这样就清楚多了。
+
+<div align=center>
+
+![Internet Error](./logic0/4.19pcb.jpg#w80)
+
+</div>
+
+其中$1\sim 4$为$A\sim D$信号输入
+
+## 4.22 题
+
+<div align=center>
+
+![Internet Error](./logic0/4.22ti.jpg#w80)
+
+</div>
+
+好家伙更是重量级。
+
+这种问题的求解重要的是**对状态的编码**，并写出逻**辑函数式**。
+
+题目给出思路，使用两位二进制进行状态编码。
+
+<div align=center>
+
+![Internet Error](./logic0/encoder.png#w40)
+
+</div>
+
+那我们需要寻找$Y$与编码之间的关系，并还原成最小项。画出卡诺图：
+
+<div align=center>
+
+![Internet Error](./logic0/4.22ka.png#w60)
+
+</div>
+
+写逻辑式，设一人的血型编码为$AB$，另一人编码为$XY$。
+
+$$
+\begin{aligned}
+Y=AB+XY'+A'B'Y'+BX'Y
+\end{aligned}
+$$
+
+接下来进行还原同样使用$embedding$方法。令$A_{1}A_{2}A_{3}=ABX,A_{4}=Y$。
+
+$$
+\begin{aligned}
+Y&=1\times m_{6}+1\times m_{7}+A_{4}'m_{1}+A_{4}'\times m_{3}+A_{4}'\times m_{5}+A_{4}'\times m_{7}\\
+&+A_{4}'\times m_{1}+A_{4}'\times m_{0}+A_{4}\times m_{2}+A_{4}\times m_{6}\\
+&=A_{4}'\times m_{0}+A_{4}' \times m_{1}+A_{4}\times m_{2}+A_{4}'\times m_{3}+1\times m_{6}+1\times m_{7}
+\end{aligned}
+$$
+
+于是画出电路图
+
+<div align=center>
+
+![Internet Error](./logic0/4.22pcb.jpg#w70)
+
+</div>
+
+::: tip
+该电路理论上是没问题的，但是实际上是错误的，因为你看当$A_{4}=0$时，非门是悬空的，所以这里应该加个上拉电阻或者下拉电阻。
+:::
+
+## 4.26 题
+
+<div align=center>
+
+![Internet Error](./logic0/4.26ti.jpg)
+
+</div>
+
+要我说不可能，完！！！
+
+先看看$74LS283$是个啥?这是[来自 TI 的资料](https://www.ti.com.cn/product/cn/SN74LS283?keyMatch=74LS283#params)，全名叫$4-Bit\; Binary\; Full\; Adders\; With\; Fast\; Carry$，说人话就是$#*#*@*#*!@*!@*@*!#$（确信）。其实就是四位超前加法器。
+
+<div align=center>
+
+![Internet Error](./logic0/74ls283.jpg#w40)
+
+</div>
+
+真值表如图所示。
+
+<div align=center>
+
+![Internet Error](./logic0/74ls283logic.jpg#w40)
+
+</div>
+
+所以$A1-4,B1-4$为二进制加数与被加数，$C0/CI$为低位进位，$\displaystyle \sum_{0-3}$为结果，$C0/C4$为产生的进位。
+
+那余3码又是何物，链接[余三码](https://baike.baidu.com/item/%E4%BD%99%E4%B8%89%E7%A0%81/5016629#:~:text=%E4%BD%99%E4%B8%89%E7%A0%81%EF%BC%88%E4%BD%993%E7%A0%81%EF%BC%89%E6%98%AF%E7%94%B1%208421BCD%E7%A0%81,%E5%8A%A0%E4%B8%8A0011%E5%BD%A2%E6%88%90%E7%9A%84%E4%B8%80%E7%A7%8D%20%E6%97%A0%E6%9D%83%E7%A0%81%20%EF%BC%8C%E7%94%B1%E4%BA%8E%E5%AE%83%E7%9A%84%E6%AF%8F%E4%B8%AA%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%AF%94%E7%9B%B8%E5%BA%94%E7%9A%848421%E7%A0%81%E5%A4%9A3%EF%BC%8C%E6%95%85%E7%A7%B0%E4%B8%BA%E4%BD%99%E4%B8%89%E7%A0%81%E3%80%82)
+
+那结果很明显了，余三码就是从$3$开始，所以只需要余三码减$3$就好了。但是但是，这$TM$是加法器，做个$der$的减法
 
