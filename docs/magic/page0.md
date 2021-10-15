@@ -51,7 +51,7 @@ $Binary\; grid\; mask$ 广泛用于实例分割。就例如 $Mask\ R-CNN$[<sup>1
 
 </div>
 
-该处理方式是受 $JPEG$ 标准的启发，$pipline$ 将二进制掩码转化为紧凑的向量。首先将 $GT\ Resize$到 $K\times K$ 大小，然后对其进行二维 $DCT-II$ (假装是罗马 2)变换，在重构时利用二维逆 $DCT$ 变换，最后利用双线性插值 $Resize$ 到 $H\times W$。数学表达如下（先看[<sup>F1</sup>](#离散余弦变换dct)）：
+该处理方式是受 $JPEG$ 标准的启发，$pipline$ 将二进制掩码转化为紧凑的向量。首先将 $GT\ Resize$到 $K\times K$ 大小，然后对其进行二维 $DCT-II$ (假装是罗马 2)变换，在重构时利用二维逆 $DCT$ 变换，最后利用双线性插值 $Resize$ 到 $H\times W$。数学表达如下（先看[离散余弦变换](#离散余弦变换dct)）：
 
 设 $Binary\; grid\; mask\; M_{gt}\in\ R^{H\times W}$。$Resize$ 到$M_{K\times K}\in\ R^{K\times K}$。文中$K=128$。二维$DCT$变换$M_{DCT}\in\ R^{K\times K}$ 频率信号由如下公式得到：
 
@@ -109,7 +109,7 @@ $$\mathcal{L}_{mask}=1^{obj}\sum_{i}^{N}D(\hat{V}_{i},V_{i})$$
 
 </div>
 
-## 离散余弦变换(DCT)
+## 离散余弦变换DCT
 
 $DCT$ 变换的全称是离散余弦变换（$Discrete\; Cosine\; Transform$），主要用于将数据或图像的压缩，能够将空域的信号转换到频域上，具有良好的去相关性的性能。
 

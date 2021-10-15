@@ -88,6 +88,10 @@ module.exports = {
             text: "数字逻辑",
             link: "/study/mathlogic/",
           },
+          {
+            text: "概率论与数理统计",
+            link: "/study/statistics/",
+          },
         ],
       },
     ],
