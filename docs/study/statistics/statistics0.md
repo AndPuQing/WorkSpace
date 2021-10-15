@@ -120,3 +120,78 @@ $$
 
 ## 随机事件的概率
 
+> 若在相同条件下进行$n$次试验，其中事件$A$发生的次数为$r_{n}(A)$，则称$\displaystyle f_{n}(A)=\frac{r_{n}(A)}{n}$，为事件$A$发生的概率。
+
+**概率的基本条件**
+
+1. 非负性：对每个事件$A$，有$P(A)\ge 0$
+2. 完备性：$P(S)=1$
+3. **可列可加性**：设$A_{1},A_{2},\cdots$是两两互不相容的事件，则有
+
+$$
+P\left (\bigcup_{i=1}^{\infty}A_{i} \right)=\sum_{i=1}^{\infty}P(A_{i})
+$$
+
+**概率的性质**
+
+1. $P(\phi)=0$
+
+2. (有限可加)设$A_{1},A_{2},\cdots,A_{n}$是两两互不相容的事件，则有
+
+$$
+P(A_{1}\cup A_{2}\cup \cdots \cup A_{n} )=P(A_{1})+P(A_{2})+\cdots+P(A_{n})
+$$
+
+这里的疑惑是可列可加性和有限可加的关系参见维基百科([Sigma-additive set function - Wikipedia](https://en.wikipedia.org/wiki/Sigma-additive_set_function))
+
+3. $P(A-B)=P(A)-P(AB)$
+
+::: tip 
+
+别记错，并且当$B\subset A$时，$P(AB)=P(B)$，所以$P(A-B)=P(A)-P(B)$
+
+:::
+
+4. 对于任意两个事件$A,B$则有
+
+$$
+P(A\cup B)=P(A)+P(B)-P(AB)
+$$
+
+并且可以进行推广，当有三个事件时
+$$
+P(A\cup B\cup C)=P(A)+P(B)+P(C)-P(AB)-P(BC)-P(AC)+P(ABC)
+$$
+对广到$n$个事件
+$$
+\begin{aligned}
+P(\bigcup_{i=1}^{n}A_{i})=\sum_{i=1}^{n}P(A_{i})-\sum_{i<j}^{n}P(A_{i}A_{j})+\sum_{i<j<k}^{n}P(A_{i}A_{j}P_{k})+\cdots\\
++(-1)^{n-1}P(A_{1}A_{2}\cdots A_{n})
+\end{aligned}
+$$
+
+## 练习集
+
+**题 1**：设$P(A)=0.1,P(A\cup B)=0.3$，且$A$与$B$互不相容，求$P(B)$
+$$
+\begin{aligned}
+P(A\cup B)&=P(A)+P(B)-P(AB)\\
+&=0.1+P(B)-0\\
+P(B)=0.2
+\end{aligned}
+$$
+::: tip
+
+注意$A$与$B$互不相容条件
+
+:::
+
+**题 2**：设事件$A,B,C$两两互不相容，$P(A)=0.2,P(B)=0.3,P(C)=0.4$，求$P[(A\cup B)-C]$
+$$
+\begin{aligned}
+P[(A\cup B)-C]&=P[(A\cap\bar{C})\cup (B\cap \bar{C})]\\
+&=[P(A)-P(AC)]+[P(B)-P(BC)]
+\end{aligned}
+$$
+又两两互不相容，所以$P[(A\cup B)-C]=P(A)+P(B)$
+
