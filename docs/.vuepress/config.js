@@ -4,6 +4,13 @@ module.exports = {
   head: [
     ["link", { rel: "icon", href: "/img/logo.png" }],
     [
+      "meta",
+      {
+        name: "google-site-verification",
+        content: "qPOsWCBmjvi4JJFnIOnS6tyICFosxmBuX5J3w3lNeu8",
+      },
+    ],
+    [
       "link",
       {
         rel: "stylesheet",
