@@ -1,3 +1,9 @@
+const autometa_options = {
+  site: {
+    name: "WorkSpace",
+  },
+  canonical_base: "https://search.puqing.work",
+};
 module.exports = {
   title: "WorkSpace",
   description: "Just playing around",
@@ -44,6 +50,15 @@ module.exports = {
         sidebarDepth: 2,
       },
     ],
+    [
+      "sitemap",
+      {
+        hostname: "https://search.puqing.work",
+        // 排除无实际内容的页面
+        exclude: ["/404.html"],
+      },
+    ],
+    ["autometa", autometa_options],
     ["vuepress-plugin-smooth-scroll"],
   ],
   markdowm: {
