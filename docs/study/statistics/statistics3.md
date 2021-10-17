@@ -38,9 +38,10 @@ title: 事件的独立性
 
 1. 设事件$A,B$相互独立，则事件$A$与$\bar{B}$，$\bar{A}$与$B$，$\bar{A}$与$\bar B$也相互独立
 
-证明：
+   ​	证明：
 
-由$A=A(B\cup\bar{B})=AB\cup A\bar{B}$，得
+   ​	由$A=A(B\cup\bar{B})=AB\cup A\bar{B}$，得
+
 $$
 \begin{aligned}
 P(A)&=P(AB\cup A\bar{B})=P(AB)+P(A\bar{B})=P(A)P(B)+P(A\bar{B})\\
@@ -49,7 +50,27 @@ P(A\bar{B})&=P(A)[1-P(B)]=P(A)P(\bar{B})
 $$
 
 
-其根本原因是$B,\bar{B}$不独立，$P(B\bar{B})=P(B)P(\bar{B})\neq 0$
+
+​		其根本原因是$B,\bar{B}$不独立，$P(B\bar{B})=P(B)P(\bar{B})\neq 0$
 
 ## 有限个事件的独立性
+
+​		设$A,B,C$为三个事件，若满足等式
+$$
+\begin{aligned}
+\left\{\begin{matrix}
+P(AB)=P(A)P(B) \\
+P(AC)=P(A)P(C) \\
+P(BC)=P(B)P(C) \\
+P(ABC)=P(A)P(B)P(C)
+\end{matrix}\right.
+\end{aligned}
+$$
+​		则称事件$A,B,C$相互独立的。
+
+​		对于$n$个事件，可以类似定义，若满足
+$$
+P(A_{i_{1}}A_{i_{2}}\cdots A_{i_{k}})=P(A_{i_{1}})P(A_{i_{2}})\cdots P(A_{i_{k}})
+$$
+​		则称事件$A_{1},A_{2},\cdots,A_{n}$相互独立的
 
