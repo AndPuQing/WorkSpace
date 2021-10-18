@@ -8,7 +8,7 @@ title: 随机事件及其概率
 2. 可观察性
 3. 不确定性
 
-把**随机试验**的每一种结果称为一个**样本点**，它们全体称为一个**样本空间**，记为$S(\Omega)$。
+&emsp;&emsp;把**随机试验**的每一种结果称为一个**样本点**，它们全体称为一个**样本空间**，记为$S(\Omega)$。
 
 ## 事件关系与表述
 
@@ -63,7 +63,7 @@ $$
 
 **题 3**，设 $A, B$ 为两事件，则 $(A \cup B)(\bar{A} \cup B)(A \cup \bar{B})(\bar{A} \cup \bar{B})=$?
 
-要我说这题直接卡诺图化简就可以了，但是不行啊，老老实实写方程吧
+&emsp;&emsp;要我说这题直接卡诺图化简就可以了，但是不行啊，老老实实写方程吧
 
 $$
 \begin{aligned}
@@ -81,15 +81,15 @@ $$
 \end{aligned}
 $$
 
-所以最后为$\phi$
+&emsp;&emsp;所以最后为$\phi$
 
 ::: warning
 注意这里使用的分配律：类似于$a(b+c)=ab+ac$,找相同的
 :::
 
-设随机事件 A，B 满足 $AB=\bar{A}\bar{B}$ , 则$A\cup B$ =?
+&emsp;&emsp;设随机事件 A，B 满足 $AB=\bar{A}\bar{B}$ , 则$A\cup B$ =?
 
-两边都乘以$B$
+&emsp;&emsp;两边都乘以$B$
 $$
 \begin{aligned}
 AB(B)=\bar{A}\bar{B}B\\
@@ -102,11 +102,11 @@ $$
 
 :::
 
-若$B=\phi$，则$AB$也是空集，若$AB=\phi$，$B$不为$\phi$
+&emsp;&emsp;若$B=\phi$，则$AB$也是空集，若$AB=\phi$，$B$不为$\phi$
 
-无论上面那种情况$AB=\phi$
+&emsp;&emsp;无论上面那种情况$AB=\phi$
 
-又用对偶律
+&emsp;&emsp;又用对偶律
 $$
 \begin{aligned}
 A'B'=\phi\\
@@ -114,7 +114,7 @@ A'B'=\phi\\
 A+B=S
 \end{aligned}
 $$
-所以$A\cup B=\Omega$
+&emsp;&emsp;所以$A\cup B=\Omega$
 
 
 
@@ -142,7 +142,7 @@ $$
 P(A_{1}\cup A_{2}\cup \cdots \cup A_{n} )=P(A_{1})+P(A_{2})+\cdots+P(A_{n})
 $$
 
-这里的疑惑是可列可加性和有限可加的关系参见维基百科([Sigma-additive set function - Wikipedia](https://en.wikipedia.org/wiki/Sigma-additive_set_function))
+&emsp;&emsp;这里的疑惑是可列可加性和有限可加的关系参见维基百科([Sigma-additive set function - Wikipedia](https://en.wikipedia.org/wiki/Sigma-additive_set_function))
 
 3. $P(A-B)=P(A)-P(AB)$
 
@@ -158,11 +158,11 @@ $$
 P(A\cup B)=P(A)+P(B)-P(AB)
 $$
 
-并且可以进行推广，当有三个事件时
+&emsp;&emsp;并且可以进行推广，当有三个事件时
 $$
 P(A\cup B\cup C)=P(A)+P(B)+P(C)-P(AB)-P(BC)-P(AC)+P(ABC)
 $$
-对广到$n$个事件
+&emsp;&emsp;推广到$n$个事件
 $$
 \begin{aligned}
 P(\bigcup_{i=1}^{n}A_{i})=\sum_{i=1}^{n}P(A_{i})-\sum_{i<j}^{n}P(A_{i}A_{j})+\sum_{i<j<k}^{n}P(A_{i}A_{j}P_{k})+\cdots\\
@@ -193,5 +193,5 @@ P[(A\cup B)-C]&=P[(A\cap\bar{C})\cup (B\cap \bar{C})]\\
 &=[P(A)-P(AC)]+[P(B)-P(BC)]
 \end{aligned}
 $$
-又两两互不相容，所以$P[(A\cup B)-C]=P(A)+P(B)$
+&emsp;&emsp;又两两互不相容，所以$P[(A\cup B)-C]=P(A)+P(B)$
 

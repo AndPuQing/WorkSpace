@@ -60,6 +60,17 @@ module.exports = {
     ],
     ["autometa", autometa_options],
     ["vuepress-plugin-smooth-scroll"],
+    [
+      "vuepress-plugin-zooming",
+      {
+        delay: 1000,
+        options: {
+          margin: 50,
+          scrollOffset: 0,
+          bgColor: "#ffffff",
+        },
+      },
+    ],
   ],
   markdowm: {
     lineNumbers: true,
