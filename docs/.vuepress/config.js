@@ -65,7 +65,6 @@ module.exports = {
       {
         delay: 1000,
         options: {
-          margin: 50,
           scrollOffset: 0,
           bgColor: "#ffffff",
         },

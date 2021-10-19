@@ -41,11 +41,7 @@ $$
 ​		即$X$服从参数为$n,p$的**二项分布**。记为$X\sim b(n,p)$（或$B(n,p)$）。
 
 <div align=center>
-
-
-![Internet Error](./statistics5/bino.png)
-
-
+<img src="./statistics5/bino.png"/>
 </div>
 
 ​		如上图是$B(10,0.7)$与$B(13,0.5)$的概率图，大致可以看出概率$P\{X=k\}$，先随$k$增大而增大，然后随着$k$的增大而减小。可以证明对于一般的二项分布的图形也具有的性质
@@ -116,22 +112,15 @@ k_{2}&=(n+1)p
 $$
 
 下图是直观的看法
+
 <div align=center>
-
-
-![Internet Error](./statistics5/k1.png#w70)
-
-
+<img src="./statistics5/k1.png" style="width:70%" />
 </div>
 
 当$(n+1)p$不为整数时，只有一个最大值
 
 <div align=center>
-
-
-![Internet Error](./statistics5/k2.png#w70)
-
-
+<img src="./statistics5/k2.png" style="width:70%" />
 </div>
 
 所以需要$(n+1)p$向下取整。
@@ -182,4 +171,10 @@ $$
 P(k)=\frac{\lambda^{k}}{k!}e^{-\lambda}
 $$
 以上就是泊松分布的概率分布函数
+
+## 相关资料
+
+1. [如何理解泊松分布](https://www.zhihu.com/question/24796044/answer/673838656)
+
+2. [泊松分布的仿真及可视化 ](https://www.luochang.ink/posts/poisson/)
 

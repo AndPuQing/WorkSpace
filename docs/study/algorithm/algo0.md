@@ -59,7 +59,9 @@ int isFullList_seq(PseqList L)
 
 三种插入，区别如下图
 
-![](./algo0/insert.png#80)
+<div align=center>
+<img src="./algo0/insert.png" style="width:90%;" />
+</div>
 
 ### 在下标位置插入
 ```c
@@ -96,8 +98,9 @@ int insertP_seq(PseqList L, int p, int x)
 
 即如下关系：
 
-![索引图](./algo0/index_p.png#w80)
-
+<div align=center>
+<img src="./algo0/index_p.png" style="width:80%;" />
+</div>
 
 ### 在下标位置前插入
 ```c
