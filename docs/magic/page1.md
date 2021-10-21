@@ -1,5 +1,9 @@
 ---
-title: 关于高频信号的一些思考
+title: "Training behavior of deep neural network in
+frequency domain"
 ---
 
-## 高频信号对网络的
+# Training behavior of deep neural network in frequency domain论文阅读
+
+> 原文：[1807.01251.pdf (arxiv.org)](https://arxiv.org/pdf/1807.01251.pdf)
+

@@ -4,15 +4,40 @@ strong {
 }
 
 table {
-  border-collapse: collapse;
-  margin: 0 auto;
-  display: block;
-  overflow-x: auto;
-  width: 50%;
+  margin: auto;
+  text-align: center;
+  display: table;
 }
 
-.line-numbers-mode pre {
-  padding-left: 1.5rem !important;
+table td, table th {
+  border: 1px solid #dc143c;
+  color: #666;
+  height: 30px;
+  min-width: 50px;
+}
+
+table thead th {
+  background-color: #fafafa;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Noto Sans CJK SC, Arial, Helvetica Neue !important;
+}
+
+code, kbd, .line-number {
+  font-family: JetBrains Mono, source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+blockquote {
+  background-color: #fff9f9;
+  border-left-color: #DA5961;
+  border-left-width: 6px;
+  border-left-style: solid;
+  padding: 20px 45px 20px 26px;
+}
+
+blockquote p {
+  color: #2e2e2e;
 }
 
 @media screen and (max-width: 1080px) {
@@ -49,85 +74,4 @@ table {
   #app > div.theme-container > header > div.links {
     max-width: 1626px !important;
   }
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, Noto Sans CJK SC, Arial, Helvetica Neue !important;
-}
-
-code, kbd, .line-number {
-  font-family: JetBrains Mono, source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-p img {
-  margin: auto;
-  display: block;
-}
-
-p, ul, ol {
-  color: black !important;
-}
-
-blockquote {
-  background-color: #fff9f9;
-  border-left-color: #DA5961;
-  border-left-width: 6px;
-  border-left-style: solid;
-  padding: 20px 45px 20px 26px;
-}
-
-img[src*='#w100'] {
-  width: 100%;
-}
-
-img[src*='#w90'] {
-  width: 90%;
-}
-
-img[src*='#w80'] {
-  width: 80%;
-}
-
-img[src*='#w70'] {
-  width: 70%;
-}
-
-img[src*='#w60'] {
-  width: 60%;
-}
-
-img[src*='#w50'] {
-  width: 50%;
-}
-
-img[src*='#w40'] {
-  width: 40%;
-}
-
-img[src*='#w30'] {
-  width: 30%;
-}
-
-img[src*='#w20'] {
-  width: 20%;
-}
-
-img[src*='#w10'] {
-  width: 10%;
-}
-
-img[src*='#w5m'] {
-  width: 5%;
-}
-
-img[src*='#w2m'] {
-  width: 2%;
-}
-
-img[src*='#w1m'] {
-  width: 1%;
-}
-
-img[src*='#w0.1'] {
-  width: 0.1%;
 }
