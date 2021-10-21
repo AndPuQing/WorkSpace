@@ -16,20 +16,36 @@ module.exports = {
         content: "qPOsWCBmjvi4JJFnIOnS6tyICFosxmBuX5J3w3lNeu8",
       },
     ],
+    // [
+    //   "link",
+    //   {
+    //     rel: "stylesheet",
+    //     href:
+    //       "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css",
+    //   },
+    // ],
     [
       "link",
       {
         rel: "stylesheet",
         href:
-          "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css",
+          "https://cdn.bootcdn.net/ajax/libs/KaTeX/0.7.1/katex.min.css",
       },
     ],
+    // [
+    //   "link",
+    //   {
+    //     rel: "stylesheet",
+    //     href:
+    //       "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css",
+    //   },
+    // ],
     [
       "link",
       {
         rel: "stylesheet",
         href:
-          "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css",
+          "https://cdn.bootcdn.net/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css",
       },
     ],
   ],
@@ -71,9 +87,6 @@ module.exports = {
       },
     ],
   ],
-  markdowm: {
-    lineNumbers: true,
-  },
   themeConfig: {
     lastUpdated: "Last Updated",
     repo: "https://github.com/AndPuQing/WorkSpace",
