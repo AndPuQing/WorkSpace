@@ -91,3 +91,76 @@ f_{Y}(y)=\begin{cases}
 \end{cases}
 $$
 通常称上面式子$Y$服从对数正态分布，也是一种常用的寿命分布。
+
+> 再来个例题：设$X\sim f_{X}(x)=\begin{cases}x/8,\quad 0<x<4\\0,\quad else\end{cases}$，求$Y=2X+8$的概率密度。
+
+设$Y$的分布函数为$F_{Y}(y)$，有如下关系
+$$
+\begin{aligned}
+F_{Y}(y)=P\{Y\le y\}=P\{2X+8\le y\}=P\{X\le \frac{y-8}{2}\}=F_{X}(\frac{y-8}{2})\\
+\end{aligned}
+$$
+所以概率密度函数为
+$$
+f_{Y}(y)=F'_{Y}(y)=\begin{cases}
+\frac{y-8}{32},\quad 8<y<16\\
+0,\quad else.
+\end{cases}
+$$
+::: tip
+
+这里直接使用分布函数是十分方便的，上面一道题正态分布和分布函数是未定的，所以求积分，而这里给了分布函数可以直接求。
+
+:::
+
+同时关于分布函数有如下定理。
+
+> 设随机变量$X$具有概率密度$f_{X}(x),x\in (-\infty,+\infty)$，又设$y=g(x)$处处可导且恒有$g'(x)>0\;or \; g'(x)<0$。则$Y=g(X)$是一个连续型随机变量，其概率密度函数为
+> $$
+> f_{Y}(y)=\begin{cases}
+> f_{X}[h(y)]|h'(y)|,\quad \alpha<y<\beta\\
+> 0,\quad else.
+> \end{cases}
+> $$
+> 其中$x=h(y)$是$y=g(x)$的反函数，且
+> $$
+> \alpha =\min(g(-\infty),g(+\infty)),\quad \beta=\max{(g(-\infty),g(+\infty))}.
+> $$
+
+关于该式的证明这里不证明，是比较好证明。这里主要是说明如何用。
+
+>例题：设随机变量$X\sim N(\mu,\sigma^{2})$，证明$X$的线性函数
+>$$
+>Y=aX+b\quad (a\ne 0)
+>$$
+>也服从正态分布
+
+因为正态分布的概率密度函数是连续的（指没有分段），所以直接套用公式即可
+
+$h(y)=\frac{Y-b}{a}$以及$h'(y)=\frac{1}{a}$
+$$
+f_{Y}(y)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(\frac{Y-b}{a}-u)^2}{2\sigma^{2}}}\frac{1}{|a|}=\frac{1}{|a|\sigma\sqrt{2\pi}}e^{-\frac{[y-(b+a\mu)]^{2}}{2(a\sigma)^2}},\quad -\infty<y<+\infty
+$$
+即有$Y=aX+b\sim N(a\mu+b,(a\sigma)^{2})$
+
+下面来个不连续的，即分布函数是分段的
+
+> 设随机变量$X$在$(0,1)$上服从均匀分布 ，求$Y=-2\ln X$
+
+因为$X$在$(0,1)$是均匀分布，即在其他区间是为零的，所以只考察区间$(0,1)$即可。
+
+$h(y)=e^{-\frac{Y}{2}}$，$h'(y)=-\frac{1}{2}e^{-\frac{Y}{2}}$
+$$
+f_{Y}(y)=
+\begin{cases}
+\frac{1}{2}e^{-\frac{y}{2}},\quad y>0\\
+0,\quad else.
+\end{cases}
+$$
+::: warning 警告
+
+1. 这里特别要注意$g(x)$的单调性，即要验证$g'(x)$是否恒为零。
+2. 以及注意$h'(x)$，要取绝对值
+
+:::
+
