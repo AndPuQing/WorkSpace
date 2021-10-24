@@ -106,6 +106,7 @@ $$
 **概率密度函数$f(x,y)$的性质：**
 
 1. $f(x,y)>0$
+
 2. $\displaystyle \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)dxdy=F(+\infty,+\infty)=1$
 
 3. 设$D$是$xOy$平面上的区域，点$(X,Y)$落入$D$的概率为
@@ -132,4 +133,36 @@ $$
    f_{Y}(y)=\int_{-\infty}^{+\infty}f(x,y)dx.
    $$
    且分别称$f_{X}(x)$和$f_{Y}(y)$为$(X,Y)$关于$X$和$Y$的边缘密度函数
+
+5. 若$f(x,y)$在点$(x,y)$处连续，则有
+   $$
+   \frac{\partial^2F(x,y)}{\partial x\partial y}=f(x,y).
+   $$
+
+## 常见的连续型二维随机变量分布
+
+### 二维均匀分布
+
+设$G$是平面上的有界区域，其面积为$A$，若二维随机变量$(X,Y)$具有概率密度函数
+$$
+f(x,y)=\begin{cases}
+1/A,\quad (x,y)\in G\\
+0,\quad else
+\end{cases},
+$$
+称为$(X,Y)$在$G$上服从均匀分布。
+
+### 二维正态分布
+
+若二维随机变量$(X,Y)$具有概率密度
+$$
+f(x,y)=\frac{1}{2\pi \sigma_{1}\sigma_{2}\sqrt{1-\rho^{2}}}e^{-\frac{1}{2(1-\rho^{2})}\left [ \left ( \frac{x-\mu_{1}}{\sigma _{1}} \right )^{2}-2\rho \left ( \frac{x-\mu_{1}}{\sigma_{1}} \right )  \left ( \frac{y-\mu_{2}}{\sigma_{2}} \right ) +\left ( \frac{y-\mu_{2}}{\sigma_{2}} \right )^{2}\right ] }
+$$
+其中$\mu_{1},\mu_{2},\sigma_{1},\sigma_{2},\rho$均为常数，且$\sigma_{1}>0,\sigma_{2}>0,|\rho|<1$，则称$(X,Y)$服从常参数为$\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2},\rho$的二维正态分布，记为$(X,Y)\sim N(\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2},\rho)$
+
+<div align=center>
+<img src="./statistics8/norm.png" style="width:70%" />
+</div>
+
+如上图是二维正态分布的大致图像。
 
