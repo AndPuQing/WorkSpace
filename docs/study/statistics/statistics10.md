@@ -48,7 +48,7 @@ $$
 
 &emsp;&emsp;可以用类似与求一元随机变量的函数分布来求$Z=g(X,Y)$的分布。
 
-1. 求分布函数$F_{Z}(z)$
+1. **求分布函数$F_{Z}(z)$**
 
 $$
 F_{Z}(z)=P\{Z\le z\}=P\{g(X,Y)\le z\}=P\{(X,Y)\in D_{Z}\}=\iint_{D_{Z}}f(x,y)dxdy.
@@ -56,11 +56,56 @@ $$
 
 其中，$D_{Z}=\{(x,y)\mid g(x,y)\le z\}$
 
-2. 求其概率密度函数$f_{Z}(z)$，对几乎所有的$z$，有
+2. **求其概率密度函数$f_{Z}(z)$，对几乎所有的$z$，有**
 
 $$
 f_{Z}(z)=F'_{Z}(z).
 $$
 
 > 其关键是将$Z=g(X,Y)$转化为$(X,Y)$在一定范围取值的形式，从而根据已知$(X,Y)$的分布求出$Z=g(X,Y)$的分布。
+
+几种特殊函数的分布：
+
+### **Z=X+Y型**
+
+&emsp;&emsp;设$(X,Y)$是二维连续型随机变量，其概率密度函数为$f(x,y)$，求$Z=X+Y$的概率密度函数$f_{Z}(z)$
+
+&emsp;&emsp;设$Z$的分布函数为$F_{Z}(z)$，则
+$$
+F_{Z}(z)=P\{Z\le z\}=P\{X+Y\le z\}=\iint_{D}f(x,y)dxdy.
+$$
+&emsp;&emsp;这里的积分区域$D=\{(x,y)\mid x+y\le z\}$是直线$x+y=z$左下方的区域
+$$
+F_{Z}(z)=\iint_{x+y\le z}f(x,y)dxdy.
+$$
+&emsp;&emsp;累次积分，得
+$$
+F_{Z}(z)=\int_{-\infty}^{+\infty}\left[\int_{-\infty}^{z-y}f(x,y)dx \right]dy.
+$$
+&emsp;&emsp;固定$z$和$y$，对括号内的积分变量代换，令$x=u-y$，得
+$$
+F_{Z}(z)=\int_{-\infty}^{+\infty}\left[\int_{-\infty}^{z}f(u-y,y)du \right]dy=\int_{-\infty}^{z}\left[\int_{-\infty}^{\infty}f(u-y,y)dy\right]du.
+$$
+&emsp;&emsp;由概率密度与分布函数的关系，即得$Z=X+Y$的概率密度
+$$
+f_{Z}(z)=F'_{Z}(z)=\int_{-\infty}^{+\infty}f(z-y,y)dy,
+$$
+&emsp;&emsp;由对称性
+$$
+f_{Z}(z)=F'_{Z}(z)=\int_{-\infty}^{+\infty}f(x,z-x)dx,
+$$
+&emsp;&emsp;上两个式子即是**两个随机变量和的概率密度的一般公式**
+
+::: tip
+
+特别的：若$X$和$Y$是独立的，设$(X,Y)$关于$X,Y$的边缘密度函数分别为$f_{X}(x),f_{Y}(y)$，则上述两式化为
+$$
+\begin{aligned}
+f_{Z}(z)=\int_{-\infty}^{+\infty}f_{X}(z-y)f_{Y}(y)dy,\\
+f_{Z}(z)=\int_{-\infty}^{+\infty}f_{X}(x)f_{Y}(z-x)dx
+\end{aligned}
+$$
+而以上两个式子被称为**卷积公式**
+
+:::
 
