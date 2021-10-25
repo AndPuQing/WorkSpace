@@ -28,8 +28,7 @@ module.exports = {
       "link",
       {
         rel: "stylesheet",
-        href:
-          "https://cdn.bootcdn.net/ajax/libs/KaTeX/0.7.1/katex.min.css",
+        href: "https://cdn.bootcdn.net/ajax/libs/KaTeX/0.7.1/katex.min.css",
       },
     ],
     // [
@@ -63,6 +62,9 @@ module.exports = {
     [
       "vuepress-plugin-auto-sidebar",
       {
+        sort: {
+          mode: "created_time_asc",
+        },
         sidebarDepth: 2,
       },
     ],
