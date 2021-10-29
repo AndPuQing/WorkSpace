@@ -30,7 +30,7 @@ $$
 &emsp;&emsp;根据表达式我们就可以画出电路图。
 
 <div align=center>
-<img src="./logic2/encoder.png" style="width:40%" />
+<img src="https://ss.im5i.com/2021/10/29/B9aRj.png" style="width:40%" />
 </div>
 
 

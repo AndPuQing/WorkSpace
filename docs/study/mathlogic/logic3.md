@@ -38,7 +38,7 @@ $$
 在结构之前首先需要补充一个知识：
 
 <div align=center>
-<img src="./logic3/test.png" style="width:50%" />
+<img src="https://ss.im5i.com/2021/10/29/B90FP.png" style="width:50%" />
 </div>
 
 如上图是该结构核心原理，当$D2$二极管的左边是低电平时，二极管导通，从而形成**管压降**，所以从**检测点**输出的电压只有$0.6574V$，因此此时已可认为是低电平。
