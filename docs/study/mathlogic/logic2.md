@@ -30,7 +30,7 @@ $$
 &emsp;&emsp;根据表达式我们就可以画出电路图。
 
 <div align=center>
-<img src="./logic2/encoder.svg" style="width:40%" />
+<img src="./logic2/encoder.png" style="width:40%" />
 </div>
 
 
@@ -101,5 +101,3 @@ $74HC147$也是一块优先编码器但是逻辑的定义不一样
 一样的是都是取反后等于输入优先变量的下标。
 
 :::
-
-wa
