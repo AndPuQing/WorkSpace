@@ -125,3 +125,46 @@ F_{N}(z)=P\{N\le z\}&=1-P\{N>z\}=1-P\{X>z,Y>z\}\\
 &=1-P\{X>z\}P\{Y>z\}=1-[1-F_{X}(z)][1-F_{Y}(z)].
 \end{aligned}
 $$
+
+> 这里特殊说明，关于离散型的最大值最小值书上没写，所以这里简单推导一下离散型的最大值最小值的概率分布。
+>
+> 首先设有$X,Y$的联合分布$P\{X=x_{i},Y=y_{i}\}=p_{ij},i,j=1,2,\cdots$
+>
+> 对于$Z=\max(X,Y)$
+> $$
+> \begin{aligned}
+> \because \{Z=z\}&=\{\max{(X,Y)}=z\}\\
+> &=\{Y\le X,X=z\}\cup\{X<Y,Y=z\}\\
+> &=\{X=x_{i},Y=y_{j},y_{j}\le x_{i}=z\}\cup\{X=x_{i},Y=y_{j},x_{i}< y_{j}=z\}\\
+> & and \quad \{X=x_{i},Y=y_{j},y_{j}\le x_{i}=z\}\cap\{X=x_{i},Y=y_{j},x_{i}< y_{j}=z\}=\phi\\
+> 
+> \end{aligned}
+> $$
+>
+> $$
+> \begin{aligned}
+> \therefore P\{Z=z\}&=P\{X=x_{i},Y=y_{j},y_{j}\le x_{i}=z\}+P\{X=x_{i},Y=y_{j},x_{i}< y_{j}=z\}\\
+> &=\sum_{y_{j}\le x_{i}=z}p_{ij}+\sum_{x_{i}<y_{j}=z}p_{ij}
+> \end{aligned}
+> $$
+>
+> 可以简单李姐为：**固定行（列），对列（行）取小求和**
+>
+> 对于$U=\min(X,Y)$，类似得
+> $$
+> P\{U=u\}=\sum_{y_{j}\ge x_{i}=u}p_{ij}+\sum_{x_{i}>y_{j}=u}p_{ij}
+> $$
+> 即：**固定行（列），对列（行）取大求和**
+
+这样可能比较难懂，举个栗子
+
+<div align=center>
+<img src="https://ss.im5i.com/2021/10/29/BYdSt.png" style="width:20%" />
+</div>
+
+<div align=center>
+<img src="https://ss.im5i.com/2021/10/29/BYfuq.png" style="width:60%" />
+</div>
+
+简单来说，就是看若是$\max$则看等于$Z$的行或者列，将该列或者行小于等于的概率求和；若是$\min$则看等于$Z$的行或者列，将该列或者行大于等于的概率求和。（去除重复项）
+
