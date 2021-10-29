@@ -109,3 +109,19 @@ $$
 
 :::
 
+### M=max{X,Y}及N=min{X,Y}的分布
+
+设随机变量$X,Y$相互独立，其分布函数分别为$F_{X}(x)$和$F_{Y}(y)$，由于$M=\max\{X,Y\}$，则有
+$$
+\begin{aligned}
+F_{M}(z)=P\{M\le z\}&=P\{X\le z,Y\le z\}\\
+&=P\{X\le z\}P\{Y\le z\}=F_{X}(z)F_{Y}(z);
+\end{aligned}
+$$
+类似的，可以得到$N=\min\{X,Y\}$的分布函数
+$$
+\begin{aligned}
+F_{N}(z)=P\{N\le z\}&=1-P\{N>z\}=1-P\{X>z,Y>z\}\\
+&=1-P\{X>z\}P\{Y>z\}=1-[1-F_{X}(z)][1-F_{Y}(z)].
+\end{aligned}
+$$
