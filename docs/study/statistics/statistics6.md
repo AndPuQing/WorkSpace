@@ -94,7 +94,7 @@ $$
 <img src="./statistics6/exp.png" style="width:80%" />
 </div>
 
-上图是指数分布的大概样子
+&emsp;&emsp;上图是指数分布的大概样子
 
 ### 正态分布
 
@@ -109,24 +109,24 @@ $$
 <img src="./statistics6/norm.png" style="width:80%" />
 </div>
 
-上图是不同$\sigma$的概率密度函数
+&emsp;&emsp;上图是不同$\sigma$的概率密度函数
 
 <div align=center>
 <img src="./statistics6/mu.png" style="width:80%" />
 </div>
 
-上图是不同的均值$\mu$
+&emsp;&emsp;上图是不同的均值$\mu$
 
-因为正态分布的概率密度函数不太好求积分，所以还是原始表达式，若$X\sim N(\mu,\sigma^{2})$，**概率分布函数**写为
+&emsp;&emsp;因为正态分布的概率密度函数不太好求积分，所以还是原始表达式，若$X\sim N(\mu,\sigma^{2})$，**概率分布函数**写为
 $$
 F(x)=\frac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^{x} e^{-\frac{(t-\mu)^{2}}{2\sigma^{2}}}dt,\quad -\infty<x<+\infty
 $$
 
-同时任意正态分布可以转化为**标准正态分布**
+&emsp;&emsp;同时任意正态分布可以转化为**标准正态分布**
 $$
 X\sim N(\mu,\sigma^{2}),Y=\frac{X-\mu}{\sigma}\sim N(0,1)
 $$
-也就是说，得到任意的正态分布可以通过以上的转化为标准正态分布，然后查表求概率
+&emsp;&emsp;也就是说，得到任意的正态分布可以通过以上的转化为标准正态分布，然后查表求概率
 
 ### 正态分布的$3\sigma$准则
 
@@ -134,7 +134,7 @@ $$
 <img src="./statistics6/3q.jpg" style="width:80%" />
 </div>
 
-如图所示，是在区域$\mu\pm \sigma,\mu\pm 2\sigma,\mu\pm 3\sigma$的区间，在这几个区间概率是比较大的分别是
+&emsp;&emsp;如图所示，是在区域$\mu\pm \sigma,\mu\pm 2\sigma,\mu\pm 3\sigma$的区间，在这几个区间概率是比较大的分别是
 
 $$
 \begin{aligned}

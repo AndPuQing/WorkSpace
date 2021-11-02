@@ -111,14 +111,14 @@ $$
 
 ### M=max{X,Y}及N=min{X,Y}的分布
 
-设随机变量$X,Y$相互独立，其分布函数分别为$F_{X}(x)$和$F_{Y}(y)$，由于$M=\max\{X,Y\}$，则有
+&emsp;&emsp;设随机变量$X,Y$相互独立，其分布函数分别为$F_{X}(x)$和$F_{Y}(y)$，由于$M=\max\{X,Y\}$，则有
 $$
 \begin{aligned}
 F_{M}(z)=P\{M\le z\}&=P\{X\le z,Y\le z\}\\
 &=P\{X\le z\}P\{Y\le z\}=F_{X}(z)F_{Y}(z);
 \end{aligned}
 $$
-类似的，可以得到$N=\min\{X,Y\}$的分布函数
+&emsp;&emsp;类似的，可以得到$N=\min\{X,Y\}$的分布函数
 $$
 \begin{aligned}
 F_{N}(z)=P\{N\le z\}&=1-P\{N>z\}=1-P\{X>z,Y>z\}\\
@@ -156,7 +156,7 @@ $$
 > $$
 > 即：**固定行（列），对列（行）取大求和**
 
-这样可能比较难懂，举个栗子
+&emsp;&emsp;这样可能比较难懂，举个栗子
 
 <div align=center>
 <img src="https://ss.im5i.com/2021/10/29/BYdSt.png" style="width:20%" />
@@ -166,5 +166,5 @@ $$
 <img src="https://ss.im5i.com/2021/10/29/BYfuq.png" style="width:60%" />
 </div>
 
-简单来说，就是看若是$\max$则看等于$Z$的行或者列，将该列或者行小于等于的概率求和；若是$\min$则看等于$Z$的行或者列，将该列或者行大于等于的概率求和。（去除重复项）
+&emsp;&emsp;简单来说，就是看若是$\max$则看等于$Z$的行或者列，将该列或者行小于等于的概率求和；若是$\min$则看等于$Z$的行或者列，将该列或者行大于等于的概率求和。（去除重复项）
 
