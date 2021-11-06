@@ -107,4 +107,92 @@ title: 触发器
 
 &emsp;&emsp;当$CLK$再次等于$0$时，$FF_{2}$被激活，输出等于$Q_{1}$
 
-> 综合上述过程，脉冲触发有如下特点，
+::: warning
+特别要注意的是在$CLK=1$期间，$FF_{1}$是持续使能，即在$CLK=0$的时刻不能单纯看此时$S,R$的状态，而是看$CLK=1$**期间**的变换，这也是脉冲触发和边沿触发的差异的地方。
+:::
+
+&emsp;&emsp;因为在$CLK=1$期间$FF_{1}$是一个$SR$触发器，所以需要满足$SR=0$的条件，否则输出信号不确定，为了改善这一情况，改进形成了$JK$触发器
+
+<div align=center>
+<img src="./logic8/jk.png" style="width:70%" />
+</div>
+
+&emsp;&emsp;相比于前者避免了$S=1,R=1$的情况，且$S=1,R=1$时，翻转信号。
+
+<div align=center>
+<img src="./logic8/jkzhen.png" style="width:70%" />
+</div>
+
+&emsp;&emsp;并且$S=J,R=K$。
+
+> 总结一下，脉冲触发器的特点是，当$CLK$为高电平时，从主触发器接受信号，而从不动，$CLK$下降沿到来时，从触发器按照主触发器的状态翻转，所以$Q,Q'$的状态发生在$CLK$的下降沿，**注意**：在$CLK$有效期间是会主触发器是被控制的。
+
+## 几种触发器的逻辑功能分类
+
+### SR 触发器
+
+<div align=center>
+<img src="./logic8/SR.png" style="width:70%" />
+</div>
+
+&emsp;&emsp;凡是符合上述逻辑式的触发器，都可以称为$SR$触发器
+
+&emsp;&emsp;其特性方程写为
+
+$$\begin{cases}Q^{*}=S+R'Q\\SR=0\end{cases}$$
+
+### JK 触发器
+
+<div align=center>
+<img src="./logic8/jkzhenzhi.png" style="width:70%" />
+</div>
+
+&emsp;&emsp;其特性方程写为
+
+$$Q^{*}=JQ'+K'Q$$
+
+&emsp;&emsp;其特点是**避免了$S,R$输入都是高电平的异常情况**。且当$S,R$同时为高电平时，翻转信号。
+
+### T 触发器
+
+&emsp;&emsp;在某些情况我们只需要有一个控制信号$T$，当$T=1$时，每个时钟信号它的状态就翻转一次，
+
+<div align=center>
+<img src="./logic8/T.png" style="width:70%" />
+</div>
+
+&emsp;&emsp;其特性方程为
+
+$$Q^{*}=Q'$$
+
+&emsp;&emsp;其逻辑符号为
+
+<div align=center>
+<img src="https://ss.im5i.com/2021/11/05/BDlAQ.png" style="width:20%" />
+</div>
+
+::: tip
+在平时是没有一个$T$触发器的芯片的，只需要$JK$触发器的$J,K$连接起来就可以了
+:::
+
+### D 触发器
+
+<div align=center>
+<img src="./logic8/Dcu.png" style="width:70%" />
+</div>
+
+&emsp;&emsp;特性方程为
+
+$$Q^{*}=D$$
+
+&emsp;&emsp;即次态取绝于$D$的输入状态。
+
+::: warning
+分析可以得到$JK$触发器作用是最广泛的，可以将$JK$触发器做适当的变换，就可以得到$SR$触发器以及$T$触发器。
+
+<div align=center>
+<img src="./logic8/tran.png" style="width:70%" />
+</div>
+:::
+
+> 最后值得说的是，不管是什么触发器其触发方式都不是固定的，可以是边沿也可以是脉冲。
