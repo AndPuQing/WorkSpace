@@ -1,0 +1,109 @@
+{
+  "main": {
+    "id": "f177afc252fccaec",
+    "type": "split",
+    "children": [
+      {
+        "id": "82ce046560a3f466",
+        "type": "leaf",
+        "state": {
+          "type": "graph",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "160e74cff485e5f8",
+    "type": "split",
+    "children": [
+      {
+        "id": "b9c0c462bc79cf20",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "29395b041941312c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "6a2c8e4d11222aca",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#TODO",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a2f7a17a880ad987",
+    "type": "split",
+    "children": [
+      {
+        "id": "04cabd718bbd19c5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3112d227b564dfbf",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "079d06bd7ac515cb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "82ce046560a3f466",
+  "lastOpenFiles": [
+    "Paper/page2.md",
+    "Paper/page1.md",
+    "Paper/固定搭配.md",
+    "everyday/README.md",
+    "Paper/README.md",
+    "study/statistics/statistics0.md",
+    "study/statistics/README.md",
+    "docs/magic/page2.md",
+    "docs/README.md",
+    "docs/magic/README.md"
+  ]
+}
